@@ -1,0 +1,24 @@
+{
+  "name": "zaplink-api",
+  "version": "1.0.0",
+  "description": "API REST do zaplink",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "test": "lab -v tests"
+  },
+  "keywords": [
+    "api",
+    "node.js",
+    "hapi.dev"
+  ],
+  "author": "Fernando Papito",
+  "license": "MIT",
+  "dependencies": {
+    "@hapi/code": "^8.0.3",
+    "@hapi/hapi": "20.0.1",
+    "@hapi/lab": "^24.2.1",
+    "mongoose": "5.10.6",
+    "nodemon": "^2.0.4"
+  }
+}
