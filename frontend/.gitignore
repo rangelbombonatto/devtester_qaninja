@@ -1,3 +1,5 @@
 .DS_Store
 node_modules
 /dist
+/mochawesome-report
+/tests/e2e/videos

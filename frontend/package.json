@@ -6,12 +6,20 @@
     "start": "yarn serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test:e2e": "vue-cli-service test:e2e"
+    "test:e2e": "vue-cli-service test:e2e",
+    "test:headless": "vue-cli-service test:e2e --headless",
+    "test:report": "yarn test:merge & yarn test:html & yarn test:mv",
+    "test:merge": "mochawesome-merge > mochawesome-report/report.json",
+    "test:html": "marge mochawesome-report//\\report.json",
+    "test:mv": "mv tests\\e2e\\screenshots mochawesome-report\\assets\\screenshots"
   },
   "dependencies": {
     "axios": "^0.21.1",
     "buefy": "^0.9.7",
     "core-js": "^3.6.5",
+    "mocha": "8.1.3",
+    "mochawesome": "6.1.1",
+    "mochawesome-merge": "4.2.0",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0"
   },

@@ -1,4 +1,4 @@
-const ContactController = require('../controllers/contact.controllers')
+const ContactController = require('../controllers/contact.controller')
 
 
 module.exports = [

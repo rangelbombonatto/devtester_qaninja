@@ -25,6 +25,24 @@
 
 describe('Cadastro de contatos', () => {
 
+    const user = { email: 'joao@yahoo.com', password: 'pwd123' }
+
+    before(() => {
+        cy.request({
+            method: 'POST',
+            url: 'http://localhost:3000/user',
+            headers: { 'Content-Type': 'application/json' },
+            body: user,
+            failOnStatusCode: false
+        }).then((response) => {
+            cy.log(JSON.stringify(response.body))
+        })
+
+        cy.doLogin(user.email, user.password)
+        cy.get('.dashboard', {timeout: 5000}).should('be.visible')
+    })
+
+
     describe('Novo Contato', () => {
         let contact = {
             name: 'Fernando Papito',
@@ -45,6 +63,8 @@ describe('Cadastro de contatos', () => {
         })
 
         describe('Quando submeto o cadastro sem o nome', () => {
+
+            const expectNotice = 'Nome é obrigatório.'
             
             let contact = {
                 number: '1199999999',
@@ -56,12 +76,13 @@ describe('Cadastro de contatos', () => {
                 cy.createContact(contact)
             })
 
-            it('Então deve mostrar uma notificação', () => {
-                cy.alertName().contains('Nome é obrigatório.')
+            it(`Então deve mostrar ${expectNotice.replace(/[^a-zA-Z ]/g, '')}`, () => {
+                cy.alertName().contains(expectNotice)
             })
         })
 
         describe('Quando submeto o cadastro sem o whatsapp', () => {
+            const expectNotice = 'WhatsApp é obrigatório.'
             
             let contact = {
                 name: 'Fernando Papito',
@@ -74,12 +95,15 @@ describe('Cadastro de contatos', () => {
                 cy.createContact(contact)
             })
 
-            it('Então deve mostrar uma notificação', () => {
-                cy.alertNumber().contains('WhatsApp é obrigatório.')
+            
+            it(`Então deve mostrar ${expectNotice.replace(/[^a-zA-Z ]/g, '')}`, () => {
+                cy.alertNumber().contains(expectNotice)
             })
         })
 
         describe('Quando submeto o cadastro sem o assunto', () => {
+            const expectNotice = 'Assunto é obrigatório.'
+
             let contact = {
                 name: 'Fernando Papito',
                 number: '1199999999'
@@ -90,8 +114,8 @@ describe('Cadastro de contatos', () => {
                 cy.createContact(contact)
             })
 
-            it('Então deve mostrar uma notificação', () => {
-                cy.alertDesc().contains('Assunto é obrigatório.')
+            it(`Então deve mostrar ${expectNotice.replace(/[^a-zA-Z ]/g, '')}`, () => {
+                cy.alertDesc().contains(expectNotice)
             })
         })
     })

@@ -20,6 +20,7 @@ if(process.env.NODE_ENV === 'test') {
 }
 
 const contactRoutes = require('./routes/contact.routes')
+const userRoutes = require('./routes/user.routes')
 
 const server = Hapi.server({
     port: 3000,
@@ -42,6 +43,7 @@ server.route({
 });
 
 server.route(contactRoutes)
+server.route(userRoutes)
 
 server.start((err)=> {
     if (err) {

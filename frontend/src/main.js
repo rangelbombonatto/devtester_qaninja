@@ -9,6 +9,15 @@ window.axios = require('axios')
 
 window.axios.defaults.baseURL= 'http://localhost:3000'
 
+window.axios.interceptors.request.use((config) => {
+  const userToken = localStorage.getItem('user_token')
+  if(userToken)
+    config.headers.Authorization = userToken
+
+  return config
+
+}, (error) => Promise.reject(error))
+
 Vue.use(Buefy)
 
 Vue.config.productionTip = false

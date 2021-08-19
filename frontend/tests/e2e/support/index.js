@@ -18,3 +18,23 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+
+// desabilitar screenshot
+Cypress.Screenshot.defaults({
+    screenshotOnRunFailure: false
+})
+
+// screenshot para cada caso de testes
+afterEach(() => {
+    cy.screenshot()
+})
+
+const addContext = require('mochawesome/addContext')
+
+// intercepta o código no final de cada execução
+Cypress.on('test:after:run', (test) => {
+    
+    const shotFileName = `${test.title} -- after each hook.png`
+    addContext({test}, `assets/screenshots/${Cypress.spec.name}/${shotFileName}`)
+})

@@ -1,0 +1,79 @@
+<testsuites tests="19" errors="0" failures="0" time="1.937">
+<testsuite name="DELETE /contacts Dado que eu tenho um contato indesejado" tests="2" skipped="0" errors="0" time="0.12">
+<testcase classname="DELETE /contacts Dado que eu tenho um contato indesejado" name="Quando eu apago esse contato" time="0.12">
+
+    </testcase>
+<testcase classname="DELETE /contacts Dado que eu tenho um contato indesejado" name="Então deve retornar 204" time="0">
+
+    </testcase>
+</testsuite>
+<testsuite name="GET /contacts" tests="2" skipped="0" errors="0" time="0">
+<testcase classname="GET /contacts" name="deve retornar 200" time="0">
+
+    </testcase>
+<testcase classname="GET /contacts" name="deve retornar uma lista" time="0">
+
+    </testcase>
+</testsuite>
+<testsuite name="POST /contacts quando o payload é nulo" tests="1" skipped="0" errors="0" time="0">
+<testcase classname="POST /contacts quando o payload é nulo" name="deve retornar 400" time="0">
+
+    </testcase>
+</testsuite>
+<testsuite name="POST /contacts quando o payload é bonitão" tests="2" skipped="0" errors="0" time="0.001">
+<testcase classname="POST /contacts quando o payload é bonitão" name="deve retornar 200" time="0">
+
+    </testcase>
+<testcase classname="POST /contacts quando o payload é bonitão" name="deve retornar o id do contato" time="0.001">
+
+    </testcase>
+</testsuite>
+<testsuite name="POST /contacts quando o payload não tem o nome" tests="2" skipped="0" errors="0" time="0.001">
+<testcase classname="POST /contacts quando o payload não tem o nome" name="deve retornar 409" time="0">
+
+    </testcase>
+<testcase classname="POST /contacts quando o payload não tem o nome" name="deve retornar uma mensagem" time="0.001">
+
+    </testcase>
+</testsuite>
+<testsuite name="POST /contacts quando o campo nome está em branco" tests="2" skipped="0" errors="0" time="0">
+<testcase classname="POST /contacts quando o campo nome está em branco" name="deve retornar 409" time="0">
+
+    </testcase>
+<testcase classname="POST /contacts quando o campo nome está em branco" name="deve retornar uma mensagem" time="0">
+
+    </testcase>
+</testsuite>
+<testsuite name="POST /contacts quando o payload não tem o whatsapp" tests="2" skipped="0" errors="0" time="0.001">
+<testcase classname="POST /contacts quando o payload não tem o whatsapp" name="deve retornar 409" time="0.001">
+
+    </testcase>
+<testcase classname="POST /contacts quando o payload não tem o whatsapp" name="deve retornar uma mensagem" time="0">
+
+    </testcase>
+</testsuite>
+<testsuite name="POST /contacts quando o campo whatsapp está em branco" tests="2" skipped="0" errors="0" time="0.001">
+<testcase classname="POST /contacts quando o campo whatsapp está em branco" name="deve retornar 409" time="0.001">
+
+    </testcase>
+<testcase classname="POST /contacts quando o campo whatsapp está em branco" name="deve retornar uma mensagem" time="0">
+
+    </testcase>
+</testsuite>
+<testsuite name="POST /contacts quando o payload não tem o assunto" tests="2" skipped="0" errors="0" time="0">
+<testcase classname="POST /contacts quando o payload não tem o assunto" name="deve retornar 409" time="0">
+
+    </testcase>
+<testcase classname="POST /contacts quando o payload não tem o assunto" name="deve retornar uma mensagem" time="0">
+
+    </testcase>
+</testsuite>
+<testsuite name="POST /contacts quando o campo assunto está em branco" tests="2" skipped="0" errors="0" time="0">
+<testcase classname="POST /contacts quando o campo assunto está em branco" name="deve retornar 409" time="0">
+
+    </testcase>
+<testcase classname="POST /contacts quando o campo assunto está em branco" name="deve retornar uma mensagem" time="0">
+
+    </testcase>
+</testsuite>
+</testsuites>

@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon server.js",
-    "test": "lab -v tests"
+    "test": "lab -v tests -I resp",
+    "test:ci": "lab -v tests -r junit -o logs/report.xml -I resp",
+    "test:coverage": "lab -v tests -r html -o logs/report.html -I resp"
   },
   "keywords": [
     "api",
@@ -18,6 +20,7 @@
     "@hapi/code": "^8.0.3",
     "@hapi/hapi": "20.0.1",
     "@hapi/lab": "^24.2.1",
+    "md5": "^2.3.0",
     "mongoose": "5.10.6",
     "nodemon": "^2.0.4"
   }
